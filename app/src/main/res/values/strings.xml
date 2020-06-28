@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TestKotlinApp</string>
+    <string name="title">Title</string>
+    <string name="complete">Complete</string>
+    <string name="reload">RELOAD</string>
+    <string name="give_it_another_try">Give it another try</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="todo_list">Todo List</string>
+    <string name="userId">User Id</string>
+    <string name="id">Id</string>
+    <string name="body">Body</string>
+    <string name="settings">Settings</string>
+</resources>
