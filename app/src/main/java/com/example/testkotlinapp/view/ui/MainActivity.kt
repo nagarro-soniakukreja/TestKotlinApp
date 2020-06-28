@@ -1,4 +1,4 @@
-package com.example.testkotlinapp.data.view.ui
+package com.example.testkotlinapp.view.ui
 
 import android.content.Intent
 import android.os.Bundle

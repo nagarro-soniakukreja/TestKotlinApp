@@ -1,4 +1,4 @@
-package com.example.testkotlinapp.data.view.adapter
+package com.example.testkotlinapp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.example.testkotlinapp.data.view.callback
+package com.example.testkotlinapp.view.callback
 
 interface ViewInterface{
     fun showProgress()

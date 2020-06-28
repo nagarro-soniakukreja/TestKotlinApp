@@ -1,4 +1,4 @@
-package com.example.testkotlinapp.data.view.ui
+package com.example.testkotlinapp.view.ui
 
 import android.content.Context
 import android.content.res.Resources
@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testkotlinapp.R
 import com.example.testkotlinapp.data.api.APIHelperImp
 import com.example.testkotlinapp.data.api.RetrofitBuilder
-import com.example.testkotlinapp.data.view.adapter.ApiUserTodoAdapter
-import com.example.testkotlinapp.data.view.callback.ViewInterface
-import com.example.testkotlinapp.data.viewmodel.TodoViewModel
-import com.example.testkotlinapp.data.viewmodel.ViewModelFactory
+import com.example.testkotlinapp.view.adapter.ApiUserTodoAdapter
+import com.example.testkotlinapp.view.callback.ViewInterface
+import com.example.testkotlinapp.viewmodel.TodoViewModel
+import com.example.testkotlinapp.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_todo_list.*
 import kotlinx.android.synthetic.main.skeleton_layout.*
 import kotlinx.coroutines.CoroutineExceptionHandler
