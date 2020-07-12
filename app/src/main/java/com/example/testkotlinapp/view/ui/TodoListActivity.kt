@@ -15,7 +15,6 @@ import com.example.testkotlinapp.R
 import com.example.testkotlinapp.data.api.APIHelperImp
 import com.example.testkotlinapp.data.api.RetrofitBuilder
 import com.example.testkotlinapp.view.adapter.ApiUserTodoAdapter
-import com.example.testkotlinapp.view.callback.ViewInterface
 import com.example.testkotlinapp.viewmodel.TodoViewModel
 import com.example.testkotlinapp.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_todo_list.*
@@ -24,33 +23,30 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlin.coroutines.CoroutineContext
 
 
-class TodoListActivity : AppCompatActivity() , ViewInterface, CoroutineScope {
+class TodoListActivity : AppCompatActivity() {
 
-    companion object { //to make it constant and cannot have multiple companion object in 1 class
+    companion object {
         private val TAG: String = TodoListActivity::class.java.simpleName
     }
     private lateinit var adapter: ApiUserTodoAdapter
     private lateinit var viewModel: TodoViewModel
-    private lateinit var job: Job
     private val inflater: LayoutInflater by lazy {
-        getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater;
+        getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     }
 
 
-    private val handler =
+/*    private val handler =
         CoroutineExceptionHandler { _, exception -> Log.d(TAG, "$exception handled!") }
 
     override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main + job + handler
+        get() = Dispatchers.Main + job + handler*/
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todo_list)
-        job = Job()
         setToolbar()
         setupUI()
         showSkeleton(true)
@@ -132,19 +128,6 @@ class TodoListActivity : AppCompatActivity() , ViewInterface, CoroutineScope {
     private fun setupViewModel() {
         viewModel = ViewModelProvider(this, ViewModelFactory(APIHelperImp(RetrofitBuilder.apiService
         ))).get(TodoViewModel::class.java)
-    }
-
-    override fun showProgress() {
-        progressBar.visibility = View.VISIBLE
-    }
-
-    override fun hideProgress() {
-        progressBar.visibility = View.GONE
-    }
-
-    override fun onDestroy() {
-        job.cancel()
-        super.onDestroy()
     }
 
     fun reloadClick(view: View) {
